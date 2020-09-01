@@ -10,7 +10,7 @@ class Divisions{
     World.add(world,this.body);
     
     }
-    Display(){
+    display(){
     var pos = this.body.position;
     rectMode(CENTER);
     fill("white");
