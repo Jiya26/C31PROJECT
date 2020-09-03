@@ -6,6 +6,7 @@ var engine, world;
 var division1,division2,division3,division4,division5,division6,division7;
 var ground;
 var ball,ball1,ball2,ball3,ball4,ball5,ball6,ball7,ball8,ball9;
+var plinkos;
 
 function setup() {
   createCanvas(460,800);
@@ -28,6 +29,8 @@ function setup() {
   ball7 = new Ball(300,-200);
   ball8 = new Ball(350,-250);
   ball9 = new Ball(400,-300);
+  
+
 }
 
 function draw() {
@@ -50,5 +53,15 @@ function draw() {
   ball7.display();
   ball8.display();
   ball9.display();
+
+  for(var j = 40; j <=width; j=j+50)
+    {      
+       pinkos.push(new Plinko(j,50));
+    }
+ 	for(var j= 15; j <=width-10; j=j+50)
+	{
+	plinkos.push(new Plinko(j,100)) ;
+	}
+
   drawSprites();
 }
