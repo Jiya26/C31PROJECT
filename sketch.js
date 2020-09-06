@@ -6,7 +6,8 @@ var engine, world;
 var division1,division2,division3,division4,division5,division6,division7;
 var ground;
 var ball,ball1,ball2,ball3,ball4,ball5,ball6,ball7,ball8,ball9;
-var plinkos;
+var plinkos=[];
+
 
 function setup() {
   createCanvas(460,800);
@@ -20,16 +21,15 @@ function setup() {
   division5 = new Divisions(365,570,8,200);
   division6 = new Divisions(455,570,8,200);
   ball = new Ball(200,0)
-  ball1 = new Ball(100,-10);
+  ball1 = new Ball(100,300);
   ball2 = new Ball(50,-50);
   ball3 = new Ball(100,-80);
   ball4 = new Ball(150,-100);
   ball5 = new Ball(200,-120);
-  ball6 = new Ball(250,-150);
-  ball7 = new Ball(300,-200);
-  ball8 = new Ball(350,-250);
-  ball9 = new Ball(400,-300);
-  
+  ball6 = new Ball(250,-700);
+  ball7 = new Ball(300,-800);
+  ball8 = new Ball(350,-900);
+  ball9 = new Ball(400,-1000);
 
 }
 
