@@ -20,7 +20,35 @@ function setup() {
   division4 = new Divisions(275,570,8,200);
   division5 = new Divisions(365,570,8,200);
   division6 = new Divisions(455,570,8,200);
-  ball = new Ball(200,0)
+
+  for(var j = 10; j <=width; j=j+50)
+  {      
+     plinkos.push(new Plinko(j,50));
+  }
+ for(var j= 15; j <=width-20; j=j+50)
+  {
+  plinkos.push(new Plinko(j,110)) ;
+  }
+  for(var j= 20; j <=width-20; j=j+50)
+  {
+  plinkos.push(new Plinko(j,170)) ;
+  }
+  for(var j= 25; j <=width-20; j=j+50)
+  {
+  plinkos.push(new Plinko(j,230)) ;
+  }
+  for(var j= 30; j <=width-20; j=j+50)
+  {
+  plinkos.push(new Plinko(j,290)) ;
+  }
+
+
+
+}
+
+function draw() {
+  background(0); 
+    ball = new Ball(200,0)
   ball1 = new Ball(100,300);
   ball2 = new Ball(50,-50);
   ball3 = new Ball(100,-80);
@@ -30,11 +58,6 @@ function setup() {
   ball7 = new Ball(300,-800);
   ball8 = new Ball(350,-900);
   ball9 = new Ball(400,-1000);
-
-}
-
-function draw() {
-  background(0); 
   Engine.update(engine);
   ground.display();
   division1.display();
@@ -54,14 +77,8 @@ function draw() {
   ball8.display();
   ball9.display();
 
-  for(var j = 40; j <=width; j=j+50)
-    {      
-       plinkos.push(new Plinko(j,50));
-    }
- 	for(var j= 15; j <=width-10; j=j+50)
-	{
-	plinkos.push(new Plinko(j,100)) ;
-	}
-
+  for(var i=0;i<plinkos.length;i++){
+    plinkos[i].display();
+  }
   drawSprites();
 }
