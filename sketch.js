@@ -7,7 +7,7 @@ var division1,division2,division3,division4,division5,division6,division7;
 var ground;
 var ball,ball1,ball2,ball3,ball4,ball5,ball6,ball7,ball8,ball9;
 var plinkos=[];
-
+var particles=[];
 
 function setup() {
   createCanvas(460,800);
@@ -48,16 +48,7 @@ function setup() {
 
 function draw() {
   background(0); 
-    ball = new Ball(200,0)
-  ball1 = new Ball(100,300);
-  ball2 = new Ball(50,-50);
-  ball3 = new Ball(100,-80);
-  ball4 = new Ball(150,-100);
-  ball5 = new Ball(200,-120);
-  ball6 = new Ball(250,-700);
-  ball7 = new Ball(300,-800);
-  ball8 = new Ball(350,-900);
-  ball9 = new Ball(400,-1000);
+
   Engine.update(engine);
   ground.display();
   division1.display();
@@ -66,19 +57,18 @@ function draw() {
   division4.display();
   division5.display();
   division6.display();
-  ball.display();
-  ball1.display();
-  ball2.display();
-  ball3.display();
-  ball4.display();
-  ball5.display();
-  ball6.display();
-  ball7.display();
-  ball8.display();
-  ball9.display();
+
+  if(frameCount%60===0){
+    particles.push(new Ball(random(width/2-20,width/2+20),10))
+  }
 
   for(var i=0;i<plinkos.length;i++){
     plinkos[i].display();
   }
+
+  for(var i = 0;i<particles.length;i++){
+    particles[i].display();
+  }
   drawSprites();
 }
+
